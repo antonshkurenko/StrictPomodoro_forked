@@ -6,7 +6,4 @@ Unpacked and re-worked Chrome extension: https://chrome.google.com/webstore/deta
 After rest time ends it starts work time.
 Now you can stop it just in the rest time (by clicking on the icon).
 No notifications.
-
-
-# Plans
-Change encoding
+Changed encoding to UTF-8
