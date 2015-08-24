@@ -1,0 +1,22 @@
+{
+   "background": {
+      "scripts": [ "background.js" ]
+   },
+   "browser_action": {
+      "default_icon": "icons/work_pending.png"
+   },
+   "description": "Помидорный таймер для одноименной тайм-менеджментской техники. Настройка режимов работы и отдыха, блокировка отвлекающих сайтов.",
+   "icons": {
+      "128": "icons/icon128.png",
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png"
+   },
+   "key": "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDORVdpLGrgDey+jY+YHDE0jJSb60DY8iZBnBYITHtrK7Nci4j5MoJioi/tkgE9k6LhOQNDsYlFEOVSbksg9Te+BtstaMoR4pinlaOlw+fOz6aSj2ml8Y/MZKN2e8UV+2y2QExiKiFv7vNqP2nYi7zQjXiwzgtdfOR+DrLj8pE0hwIDAQAB",
+   "manifest_version": 2,
+   "name": "Строгий Помидор",
+   "options_page": "options.html",
+   "permissions": [ "notifications", "tabs", "\u003Call_urls>" ],
+   "update_url": "http://clients2.google.com/service/update2/crx",
+   "version": "1.0",
+   "web_accessible_resources": [ "icons/work_full.png", "icons/break_full.png" ]
+}

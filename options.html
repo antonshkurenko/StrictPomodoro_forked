@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Настройки Строгого Помидора</title>
+    <style type="text/css">
+      html {
+        height: 100%;
+        width: 100%;
+      }
+
+      body {
+        background: url(icons/work_full.png) no-repeat fixed right bottom;
+        font-family: sans-serif;
+        padding: 0 1.5em;
+      }
+      
+      select, input[type=text] {
+        background: none;
+        border: 1px solid #aaa;
+        padding: .25em;
+        -webkit-border-radius: 3px;
+      }
+      
+      #site-list-wrapper {
+        margin-bottom: 2em;
+      }
+      
+      #site-list-header {
+        font-weight: bold;
+        margin-bottom: .25em;
+      }
+      
+      #site-list-header select {
+        font-size: 100%;
+        font-weight: bold;
+        padding: 0;
+      }
+
+      #site-list {
+        border: 1px solid #aaa;
+        height: 15em;
+        width: 25em;
+      }
+      
+      #site-list-wrapper .note {
+        width: 33em;
+      }
+
+      p {
+        width: 50%;
+      }
+
+      #save-successful {
+        color: green;
+        display: none;
+        margin-left: 1em;
+      }
+      
+      #time-format-error {
+        color: red;
+        display: none;
+      }
+
+      #save-successful.show, #time-format-error.show {
+        display: inline;
+      }
+
+      #work-block-info {
+        color: red;
+        display: none;
+        width: 25em;
+      }
+
+      body.work #work-block-info {
+        display: block;
+      }
+
+      div {
+        margin-bottom: .75em;
+      }
+      
+      #durations label {
+        font-weight: bold;
+      }
+      
+      #durations span {
+        font-size: 85%;
+        margin-right: 1.5em;
+      }
+      
+      .note {
+        color: #333;
+        font-size: 75%;
+      }
+      
+      label .note {
+        margin-left: 2em;
+        margin-top: 0;
+      }
+      
+      #save-button {
+        margin-top: 1em;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Настройки Строгого Помидора</h1>
+    <p id="work-block-info">
+	  Чтобы избежать соблазна, некоторые настройки нельзя поменять в течение рабочей сессии. Терпите, пожалуйста.
+    </p>
+    <form id="options-form">
+      <div id="site-list-wrapper">
+        <header id="site-list-header">
+          <select id="blacklist-or-whitelist">
+            <option>Блокировать</option>
+            <option>Разрешать</option>
+          </select>
+          только сайты из этого списка:
+        </header>
+        <textarea id="site-list"></textarea>
+        <p class="note">
+	      Вводите по одному сайту на строчку, например: youtube.com или google.com/reader/ 
+          На основе этого списка мы заблокируем или разрешим просмотр сайтов.		  
+        </p>
+        <p class="note">
+			Обратите внимание, что mail.example.com в списке никак не повлияет на www.example.com, но example.com будет влиять на оба предыдущих. Аналогично, google.com/reader/ соответствует Гугл Ридер, но никак не влияет на поиск Гугл, Gmail или любой другой сервис Google 
+        </p>
+      </div>
+      <div id="durations">
+        <label for="work-duration">Работа:</label>
+        <input id="work-duration" type="text" size="2" />
+        <span>минуты</span>
+        <label for="break-duration">Отдых:</label>
+        <input id="break-duration" type="text" size="2" />
+        <span>минуты</span>
+        <span id="time-format-error">
+          Время должно быть в формате MM или MM:SS
+        </span>
+      </div>
+      <div>
+        <input id="should-ring" type="checkbox">
+        <label for="should-ring">
+          По окончании сессии воспроизводить звуковой сигнал
+        </label>
+      </div>
+      <div>
+        <input id="click-resets" type="checkbox">
+        <label for="click-resets">
+			Клик по активному таймеру перезапустит его
+          <p class="note">
+			Согласно нашей строгой философии, единственный способ <em>отключить</em> активный таймер - отключить приложение.
+          </p>
+        </label>
+      </div>       
+      <button type="submit" id="save-button">Сохранить</button>
+      <span id="save-successful">Сохранено</span>
+    </form>
+    <script type="text/javascript" src="options.js"></script>
+  </body>
+</html>
+
